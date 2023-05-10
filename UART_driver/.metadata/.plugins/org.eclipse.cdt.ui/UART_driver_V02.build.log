@@ -1,0 +1,36 @@
+14:08:18 **** Incremental Build of configuration Debug for project UART_driver_V02 ****
+make all 
+Building file: ../UART_driver_V02.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"UART_driver_V02.d" -MT"UART_driver_V02.o" -c -o "UART_driver_V02.o" "../UART_driver_V02.c"
+../UART_driver_V02.c: In function 'main':
+../UART_driver_V02.c:15: warning: unused variable 'Str'
+Finished building: ../UART_driver_V02.c
+ 
+Building target: UART_driver_V02.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,UART_driver_V02.map -mmcu=atmega32 -o "UART_driver_V02.elf"  ./UART_driver_V02.o ./uart.o ./uart_test.o   
+Finished building target: UART_driver_V02.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S UART_driver_V02.elf  >"UART_driver_V02.lss"
+Finished building: UART_driver_V02.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 UART_driver_V02.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    1034 bytes (3.2% Full)
+(.text + .data + .bootloader)
+
+Data:          7 bytes (0.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+14:08:18 Build Finished. 0 errors, 1 warnings. (took 455ms)
+

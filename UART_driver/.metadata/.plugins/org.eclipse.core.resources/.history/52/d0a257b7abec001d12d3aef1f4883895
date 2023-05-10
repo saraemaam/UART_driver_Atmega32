@@ -1,0 +1,55 @@
+/****************************************************************
+ *
+ * Module: UART
+ *
+ * File Name: uart.h
+ *
+ * Description: Header File for AVR uart driver
+ *
+ * Author: Sarah
+ ******************************************************************/
+#ifndef UART_H_
+#define UART_H_
+
+#include "std_types.h"
+
+/*******************************************************************************
+ *                         Types Declaration                                   *
+ *******************************************************************************/
+
+typedef enum {
+	BAUD_RATE_9600=9600,BAUD_RATE_14400=1400,BAUD_RATE_19200=19200
+
+}uart_Baudrate;
+
+/* 3 BITS USED FOR CHACTER SIZE SETTINGS*/
+typedef enum {
+	_5BIT_MODE,_6BIT_MODE,_7BIT_MODE,_8BIT_MODE,_9BIT_MODE=7
+
+}uart_character_size;
+
+/* ONLY 1 BIT USED FOR CLOCK POLARITY SETTINGS */
+typedef enum {
+	ASYNCHRONOUS_MODE,SYNCHRONOUS_MODE_RAISING_TX_FALLING_RX=0,
+	SYNCHRONOUS_MODE_RAISING_RX_FALLING_TX =1
+
+}uart_ClockPolarity;
+
+/* STOP BITS ONLY 1 BIT USED */
+typedef enum {
+	_1STOP_BIT,_2STOP_BIT
+
+}uart_stop_bits;
+
+
+
+
+
+
+
+
+
+
+
+
+#endif /* UART_H_ */

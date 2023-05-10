@@ -1,0 +1,36 @@
+/******************************************************************************
+ * Module: Common - Macros
+ * File Name: Exercise1
+ * Description: Test functionality of UART
+ * Author: Sarah
+ *******************************************************************************/
+
+#include "uart.h"
+
+int main(void)
+{
+	typedef struct {
+		uint32 Baudrate;
+		uart_character_size num_of_data_bits;
+		uart_stop_bits stop_bits;
+		uart_Parity_Mode Parity_mode;
+
+	}
+
+	uart_ConfigType uart_configuration = { 9600,_8BIT_MODE,_1STOP_BIT,DISABLED};
+
+
+	uint8 Str[20];
+	uint8 data;
+
+	/* Initialize the UART driver with Baud-rate = 9600 bits/sec */
+	UART_init(9600);
+
+	while(1)
+	{
+		data = UART_recieveByte(); /* Receive Byte from Terminal */
+		UART_sendByte(data);       /* Re-send the received byte to Terminal */
+		//UART_receiveString(Str);     /* Receive String from Terminal */
+		//UART_sendString(Str);        /* Re-send the string to Terminal */
+	}
+}
